@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Output;
+use App\Http\Requests\Product\UpdateRequest;
 use App\Jobs\ProcessProductsBatch;
 use App\Models\Product;
 use App\Services\TrendyolService;
@@ -100,7 +101,7 @@ class ProductController extends Controller
         }
     }
 
-    public function update(Request $request, Product $product)
+    public function update(UpdateRequest $request, Product $product)
     {
         try {
             $input = $request->all();
